@@ -1,0 +1,236 @@
+:root {
+  --background-color: #1a535c;
+  --primary-color: #f7fff7;
+  --secondary-color: #4ecdc4;
+  --action-color: #ff6b6b;
+  --accent-color: #ffe66d;
+  --border-radius: 8px;
+  --game-board-gradient: linear-gradient(
+    333deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 240, 240, 1) 44%,
+    rgba(220, 249, 255, 1) 100%
+  );
+  --box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--background-color);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+h1 {
+  font-size: 1.25rem;
+}
+h2 {
+  font-size: 1rem;
+}
+h3 {
+  font-size: 0.85rem;
+}
+
+.section {
+  width: 90vw;
+  height: 95vh;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  color: var(--action-color);
+  padding-top: 0.5rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.heading {
+  font-size: 2.75rem;
+  width: max-content;
+  border-bottom: 5px solid var(--accent-color);
+  font-style: oblique;
+}
+
+.container {
+  display: block;
+  padding: 0.75rem 2rem;
+  height: 90%;
+  align-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.game-vitals {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  color: var(--secondary-color);
+  justify-content: space-between;
+}
+
+.score {
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.score h1 {
+  font-size: 1.5rem;
+}
+
+.difficulty {
+  padding: 0.1rem 1rem;
+  position: relative;
+}
+
+.difficulty h3 {
+  color: var(--background-color);
+}
+
+.difficulty > div {
+  padding-right: 0.75rem;
+  padding-top: 5px;
+}
+
+.difficulty input {
+  border-radius: var(--border-radius);
+  color: var(--background-color);
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 900;
+  border: none;
+  background-color: var(--accent-color);
+  opacity: 1;
+}
+
+.difficulty::before {
+  content: "^";
+  position: absolute;
+  top: 2px;
+  left: 118px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  color: var(--primary-color);
+  background-color: var(--action-color);
+}
+
+.difficulty input:disabled {
+  background-color: var(--action-color);
+  opacity: 0.7;
+  transition: all ease-in-out 150ms;
+}
+
+.button-container {
+  padding: 10px;
+  margin-left: 130px;
+}
+
+.button {
+  padding: 0 10px;
+  padding-bottom: 4px;
+  background-color: var(--action-color);
+  border-radius: var(--border-radius);
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  opacity: 0.7;
+  box-shadow: var(--box-shadow);
+}
+
+.button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  transition: all ease-in-out 100ms;
+}
+
+.game-board {
+  width: 950px;
+  height: 390px;
+  margin: auto;
+  margin-top: 10px;
+  background: var(--game-board-gradient);
+  border-radius: var(--border-radius);
+  border: 7px outset var(--action-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.game-arena {
+  height: 99%;
+  width: 99%;
+  position: relative;
+}
+
+.grid {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.grid .point {
+  position: absolute;
+  background-color: var(--background-color);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.mouse {
+  width: fit-content;
+  text-align: center;
+  padding: 2px;
+  border-radius: 33%;
+  background-color: var(--accent-color);
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  z-index: 5;
+}
+
+.snake-head {
+  width: fit-content;
+  text-align: center;
+  padding: 1px;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  background-color: var(--action-color);
+}
+
+.snake-body {
+  width: fit-content;
+  text-align: center;
+  padding: 0.5px;
+  border-radius: 63%;
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  background-color: var(--action-color);
+}
+
+.info {
+  font-size: 0.7rem;
+  margin-top: 5px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: center;
+}
