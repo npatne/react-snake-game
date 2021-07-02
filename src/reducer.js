@@ -2,19 +2,20 @@ import {
   snakeStartPosition,
   mouseStartPosition,
   directions,
-  SET_DIFFICULTY,
+  SET_SPEED,
   TOGGLE_PLAY,
   MOVE_SNAKE,
   CHANGE_DIRECTION,
   SHOW_MOUSE,
   EAT_MOUSE,
+  TOGGLE_CONSOLE,
 } from "./constants";
 
 const reducer = (state, action) => {
   const { type } = action;
   switch (type) {
-    case SET_DIFFICULTY:
-      return { ...state, difficulty: action.payload };
+    case SET_SPEED:
+      return { ...state, speed: action.payload };
 
     case TOGGLE_PLAY:
       return { ...state, play: !state.play };
@@ -50,7 +51,7 @@ const reducer = (state, action) => {
       if (new_x < 0 || new_x > 39 || new_y < 0 || new_y > 15) {
         return {
           score: 0,
-          difficulty: 1,
+          speed: 1,
           matrixPos: state.matrixPos,
           play: false,
           mousePosition:
@@ -82,7 +83,7 @@ const reducer = (state, action) => {
       if (selfBite) {
         return {
           score: 0,
-          difficulty: 1,
+          speed: 1,
           matrixPos: state.matrixPos,
           play: false,
           mousePosition:
@@ -170,6 +171,8 @@ const reducer = (state, action) => {
       }
       return state;
 
+    case TOGGLE_CONSOLE:
+      return { ...state, showConsole: !state.showConsole };
     default:
       return state;
   }

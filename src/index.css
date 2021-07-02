@@ -1,7 +1,7 @@
 :root {
   --background-color: #1a535c;
   --primary-color: #f7fff7;
-  --secondary-color: #4ecdc4;
+  --secondary-color: #64aaa5;
   --action-color: #ff6b6b;
   --accent-color: #ffe66d;
   --border-radius: 8px;
@@ -93,57 +93,57 @@ h3 {
 .score h1 {
   font-size: 1.5rem;
 }
-
-.difficulty {
-  padding: 0.1rem 1rem;
-  position: relative;
+.score-value {
+  color: var(--action-color);
 }
 
-.difficulty h3 {
-  color: var(--background-color);
+/* speed container css - begins */
+.speed-container {
+  padding-right: 1rem;
+}
+.speed-label {
+  padding-right: 0.5rem;
+  align-self: center;
 }
 
-.difficulty > div {
-  padding-right: 0.75rem;
-  padding-top: 5px;
+.speed-value {
+  align-self: center;
 }
-
-.difficulty input {
-  border-radius: var(--border-radius);
-  color: var(--background-color);
-  font-size: 1.25rem;
-  text-align: center;
-  font-weight: 900;
+.speed-value .value {
+  margin: 0px 0.5rem;
+  font-size: 1.5rem;
+  color: var(--action-color);
+  font-weight: bolder;
+}
+.speed-btn {
   border: none;
-  background-color: var(--accent-color);
-  opacity: 1;
-}
-
-.difficulty::before {
-  content: "^";
-  position: absolute;
-  top: 2px;
-  left: 118px;
-  text-align: center;
   border-radius: var(--border-radius);
-  color: var(--primary-color);
-  background-color: var(--action-color);
+  background-color: transparent;
+  color: var(--background-color);
+  font-size: 1.6rem;
+  font-weight: bolder;
+  transition: all ease-in-out 100ms;
 }
-
-.difficulty input:disabled {
-  background-color: var(--action-color);
-  opacity: 0.7;
-  transition: all ease-in-out 150ms;
+.speed-btn:hover {
+  cursor: pointer;
+  transform: scale(1.55);
 }
+.speed-btn:disabled {
+  opacity: 0.6;
+  transform: none;
+  cursor: default;
+}
+/* speed container css - ends */
 
 .button-container {
-  padding: 10px;
-  margin-left: 130px;
+  transform: translateX(-25px);
+  padding: 8px;
 }
 
 .button {
-  padding: 0 10px;
+  padding: 0 12px;
   padding-bottom: 4px;
+  margin: 0 10px;
   background-color: var(--action-color);
   border-radius: var(--border-radius);
   color: var(--accent-color);
@@ -159,6 +159,14 @@ h3 {
   opacity: 0.9;
   cursor: pointer;
   transition: all ease-in-out 100ms;
+}
+
+.menu-btn {
+  padding: 5px 10px;
+}
+.menu-btn:disabled {
+  cursor: default;
+  opacity: 0.4;
 }
 
 .game-board {

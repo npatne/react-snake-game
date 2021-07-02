@@ -1,7 +1,9 @@
 import React from "react";
-import { SnakeBoard, SnakeVitals } from "./components/index";
+import { SnakeBoard, SnakeVitals, Console } from "./components/index";
+import { useGameContext } from "./gameContext";
 
 function App() {
+  const { state } = useGameContext();
   return (
     <main className="section">
       <div className="header">
@@ -12,6 +14,7 @@ function App() {
         <p className="info">use arrow keys to control</p>
         <SnakeBoard />
       </section>
+      {state.showConsole && <Console />}
     </main>
   );
 }

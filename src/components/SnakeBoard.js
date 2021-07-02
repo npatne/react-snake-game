@@ -10,12 +10,12 @@ function SnakeBoard() {
     if (state.play) {
       const interval = setInterval(() => {
         dispatch({ type: MOVE_SNAKE });
-      }, 600 - 100 * state.difficulty);
+      }, 600 - 100 * state.speed);
       return () => {
         clearInterval(interval);
       };
     }
-  }, [state.play, state.difficulty]);
+  }, [state.play, state.speed]);
 
   useEffect(() => {
     dispatch({ type: EAT_MOUSE });

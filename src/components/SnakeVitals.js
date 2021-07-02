@@ -1,13 +1,16 @@
 import React from "react";
 import { useGameContext } from "../gameContext";
-import { SET_DIFFICULTY, TOGGLE_PLAY } from "../constants";
+import { TOGGLE_CONSOLE, TOGGLE_PLAY } from "../constants";
 
 function SnakeVitals() {
-  const { state, dispatch } = useGameContext();
+  const { state, dispatch, handleChangeSpeed } = useGameContext();
+
   return (
-    <div className="game-vitals d-flex">
+    <div className="d-flex game-vitals">
       <div className="score d-flex">
-        <h1>{state.score}</h1>
+        <h1>
+          Current Score:&nbsp;<span className="score-value">{state.score}</span>
+        </h1>
       </div>
       <div className="button-container d-flex">
         <button
@@ -19,31 +22,40 @@ function SnakeVitals() {
         >
           {!state.play ? "play💃" : "pause🧍‍♂️"}
         </button>
-      </div>
-      <div className="difficulty d-flex">
-        <div>
-          <h1>Difficulty:</h1>
-          <h3>1 to 5</h3>
-        </div>
-        <input
-          min="1"
-          max="5"
-          type="number"
-          className="input"
-          value={state.difficulty}
+        <button
+          type="button"
           disabled={state.play ? true : false}
-          onChange={(event) => {
-            const value = event.target.value;
-            if (value < 0 || value > 5) {
-              alert("Input difficulty level between 1 to 5");
-            } else {
-              dispatch({
-                type: SET_DIFFICULTY,
-                payload: parseInt(value),
-              });
-            }
+          onClick={() => {
+            dispatch({ type: TOGGLE_CONSOLE });
           }}
-        />
+          className="button menu-btn"
+        >
+          console
+        </button>
+      </div>
+      <div className="speed-container d-flex">
+        <div className="speed-label">
+          <h1>Speed:</h1>
+        </div>
+        <div className="speed-value">
+          <button
+            className="speed-btn"
+            disabled={state.play ? true : false}
+            name="inc"
+            onClick={handleChangeSpeed}
+          >
+            +
+          </button>
+          <span className="value">{state.speed}</span>
+          <button
+            className="speed-btn"
+            disabled={state.play ? true : false}
+            name="dec"
+            onClick={handleChangeSpeed}
+          >
+            -
+          </button>
+        </div>
       </div>
     </div>
   );

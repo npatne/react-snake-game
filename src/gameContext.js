@@ -9,6 +9,7 @@ import {
   mouseStartPosition,
   directions,
   CHANGE_DIRECTION,
+  SET_SPEED,
 } from "./constants";
 
 import reducer from "./reducer";
@@ -33,7 +34,7 @@ const matrixPos = getMatrixPos();
 
 const initialState = {
   score: 0,
-  difficulty: 1,
+  speed: 1,
   matrixPos: matrixPos,
   play: false,
   mousePosition: matrixPos[mouseStartPosition.top][mouseStartPosition.left],
@@ -47,6 +48,7 @@ const initialState = {
   },
   validDirection: true,
   showMouse: true,
+  showConsole: true,
 };
 
 const AppContext = React.createContext();
@@ -82,8 +84,32 @@ const AppProvider = ({ children }) => {
     }
   }, [state.play, state.validDirection]);
 
+  const handleChangeSpeed = (e) => {
+    let value = state.speed;
+    const name = e.target.name;
+    if (name === "inc") {
+      if (value === 5) {
+        alert("Valid speed level is between 1 to 5");
+        return;
+      }
+      value++;
+    }
+    if (name === "dec") {
+      if (value === 1) {
+        alert("Valid speed level is between 1 to 5");
+        return;
+      }
+      value--;
+    }
+
+    dispatch({
+      type: SET_SPEED,
+      payload: value,
+    });
+  };
+
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ state, dispatch, handleChangeSpeed }}>
       {children}
     </AppContext.Provider>
   );
