@@ -4,12 +4,12 @@ import { css } from "../constants";
 import { useGameContext } from "../gameContext";
 import { TOGGLE_CONSOLE } from "../constants";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Instructions } from "./index";
+import { Instructions, Transactions, Account } from "./index";
 
 function Console() {
   const [screen, setScreen] = useState({
-    inst: true,
-    acc: false,
+    inst: false,
+    acc: true,
     trx: false,
   });
 
@@ -68,8 +68,8 @@ function Console() {
         </nav>
         <section className="modal-container">
           {screen.inst && <Instructions />}
-          {screen.acc && "acc"}
-          {screen.trx && "trx"}
+          {screen.acc && <Account />}
+          {screen.trx && <Transactions />}
         </section>
       </div>
     </Wrapper>

@@ -17,8 +17,6 @@ const css = {
   actionColor: "#ff6b6b",
   accentColor: "#ffe66d",
   borderRadius: "8px",
-  gameBoardGradient:
-    "linear-gradient(333deg,rgba(255, 255, 255, 1) 0%,rgb(255, 240, 240, 1) 44%,rgba(220, 249, 255, 1) 100%)",
   boxShadow: "2px 2px 5px -2px rgba(0, 0, 0, 0.5)",
 };
 
@@ -99,6 +97,62 @@ const instructions = {
   ],
 };
 
+// transaction
+const transactionOptions = [
+  {
+    title: "Create Snake",
+    label:
+      "Input name for the snake (note: this will override and reset any previous snake created with this account)",
+  },
+  {
+    title: "Change Color",
+    label: "Input desired color hex value.",
+  },
+  {
+    title: "Change Head",
+    label:
+      "Input desired emoji for the snake head. (keyboard shortcut: win + '.' )",
+  },
+];
+
+const transactionHistory = [
+  {
+    timestamp: Date.now(),
+    cause: "Change Color",
+    price: "10 ST",
+  },
+  {
+    timestamp: Date.now() - 10000000,
+    cause: "Change Head",
+    price: "40 ST",
+  },
+  {
+    timestamp: Date.now() - 30000000,
+    cause: "Change Color",
+    price: "10 ST",
+  },
+];
+
+// Account related constants
+
+const scoreHistory = [
+  {
+    timestamp: Date.now(),
+    score: "20",
+    price: "10 ST",
+  },
+  {
+    timestamp: Date.now() - 10000000,
+    score: "80",
+    price: "40 ST",
+  },
+  {
+    timestamp: Date.now() - 30000000,
+    score: "30",
+    price: "10 ST",
+  },
+];
+
 export {
   FIXED_HIEGHT,
   FIXED_WIDTH,
@@ -116,4 +170,7 @@ export {
   TOGGLE_CONSOLE,
   css,
   instructions,
+  transactionOptions,
+  transactionHistory,
+  scoreHistory,
 };

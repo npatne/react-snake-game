@@ -78,7 +78,7 @@ function SnakeBoard() {
               key={index}
               style={{ top: frag.top, left: frag.left }}
             >
-              🔸
+              ※
             </div>
           );
         })}
