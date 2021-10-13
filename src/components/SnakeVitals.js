@@ -41,19 +41,21 @@ function SnakeVitals() {
           <button
             className="speed-btn"
             disabled={state.play ? true : false}
-            name="inc"
-            onClick={handleChangeSpeed}
-          >
-            +
-          </button>
-          <span className="value">{state.speed}</span>
-          <button
-            className="speed-btn"
-            disabled={state.play ? true : false}
             name="dec"
             onClick={handleChangeSpeed}
           >
             -
+          </button>
+
+          <span className="value">{state.speed}</span>
+
+          <button
+            className="speed-btn"
+            disabled={state.play ? true : false}
+            name="inc"
+            onClick={handleChangeSpeed}
+          >
+            +
           </button>
         </div>
       </div>
