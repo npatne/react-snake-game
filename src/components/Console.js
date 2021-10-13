@@ -8,8 +8,8 @@ import { Instructions, Transactions, Account } from "./index";
 
 function Console() {
   const [screen, setScreen] = useState({
-    inst: false,
-    acc: true,
+    inst: true,
+    acc: false,
     trx: false,
   });
 
