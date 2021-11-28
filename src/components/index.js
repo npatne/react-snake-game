@@ -6,6 +6,7 @@ import Transactions from "./Transactions";
 import Account from "./Account";
 import Loader from "./Loader";
 import Notification from "./Notification";
+import GameOver from "./GameOver";
 
 export {
   SnakeBoard,
@@ -16,4 +17,5 @@ export {
   Loader,
   Account,
   Notification,
+  GameOver,
 };

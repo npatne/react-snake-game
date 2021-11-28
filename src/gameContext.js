@@ -49,6 +49,7 @@ const initialState = {
   validDirection: true,
   showMouse: true,
   showConsole: true,
+  showModal: false,
 };
 
 const AppContext = React.createContext();

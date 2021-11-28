@@ -7,6 +7,7 @@ import { Notification } from "./index";
 function Transactions() {
   const initialState = { 0: "", 1: "", 2: "" };
   const [value, setValue] = useState(initialState);
+  const [notification, setNotification] = useState({ show: false, msg: "" });
   // loader, notifications are yet to be triggred
 
   const handleChange = (e) => {
@@ -46,12 +47,7 @@ function Transactions() {
           </span>
         </h2>
 
-        {true && (
-          <Notification
-            msg="Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-          natus!"
-          />
-        )}
+        {notification.show && <Notification msg={notification.msg} />}
       </header>
       <div className="trx-container">
         <div className="transact">
@@ -65,7 +61,7 @@ function Transactions() {
               const { title, label } = item;
               return (
                 <div key={index} className="form-control">
-                  {true && (
+                  {notification.show && (
                     <div className="loader-pos">
                       <Loader />
                     </div>
@@ -85,11 +81,21 @@ function Transactions() {
                     />
                     <button
                       onClick={() => {
-                        setValue(initialState);
-                        console.log(`🎈send clicked🎈`, {
-                          value: value[index],
-                          title,
-                        });
+                        if (value[index]) {
+                          setValue(initialState);
+                          setNotification({
+                            show: true,
+                            msg: `Title: ${title} | Trx. Value: ${value[index]},  Transation sent succesfully!`,
+                          });
+                          setTimeout(() => {
+                            setNotification({
+                              show: false,
+                              msg: "",
+                            });
+                          }, 10000);
+                        } else {
+                          alert("Please input a valid value.");
+                        }
                       }}
                     >
                       Send

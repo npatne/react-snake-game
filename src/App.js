@@ -1,10 +1,11 @@
 import React from "react";
 import { GiSnakeTotem, GiRat } from "react-icons/gi";
-import { SnakeBoard, SnakeVitals, Console } from "./components/index";
+import { SnakeBoard, SnakeVitals, Console, GameOver } from "./components/index";
 import { useGameContext } from "./gameContext";
 
 function App() {
   const { state } = useGameContext();
+
   return (
     <main className="section">
       <div className="header">
@@ -20,6 +21,7 @@ function App() {
         <SnakeBoard />
       </section>
       {state.showConsole && <Console />}
+      {state.showModal && <GameOver />}
     </main>
   );
 }

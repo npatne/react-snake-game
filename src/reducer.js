@@ -9,6 +9,7 @@ import {
   SHOW_MOUSE,
   EAT_MOUSE,
   TOGGLE_CONSOLE,
+  CLOSE_MODAL,
 } from "./constants";
 
 const reducer = (state, action) => {
@@ -70,6 +71,7 @@ const reducer = (state, action) => {
             direction: directions.right,
           },
           validDirection: true,
+          showModal: true,
         };
       }
 
@@ -102,6 +104,7 @@ const reducer = (state, action) => {
             direction: directions.right,
           },
           validDirection: true,
+          showModal: true,
         };
       }
 
@@ -173,6 +176,9 @@ const reducer = (state, action) => {
 
     case TOGGLE_CONSOLE:
       return { ...state, showConsole: !state.showConsole };
+
+    case CLOSE_MODAL:
+      return { ...state, showModal: false };
     default:
       return state;
   }

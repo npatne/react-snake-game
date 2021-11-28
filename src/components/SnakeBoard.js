@@ -59,7 +59,7 @@ function SnakeBoard() {
             }}
             className="mouse"
           >
-            🐭
+            🐁
           </div>
         )}
         <div
@@ -69,7 +69,7 @@ function SnakeBoard() {
             left: state.snake.headPos.left,
           }}
         >
-          🐍
+          <span className="snake-head-icon">🐍</span>
         </div>
         {state.snake.body.map((frag, index) => {
           return (

@@ -16,6 +16,20 @@
   display: inline;
 }
 
+.snake-head-icon {
+  transform: scaleX(-1);
+}
+
+.show-gameover-modal {
+  display: block;
+  opacity: 1;
+}
+.hide-gameover-modal {
+  display: none;
+  opacity: 0;
+  transition: opacity ease-in-out 200ms;
+}
+
 * {
   margin: 0px;
   padding: 0;
@@ -62,7 +76,7 @@ h3 {
 }
 
 .heading {
-  font-size: 3.2rem;
+  font-size: 3rem;
   width: max-content;
   margin: 0.5rem;
   font-family: var(--heading-font);

@@ -28,6 +28,7 @@ const CHANGE_DIRECTION = "CHANGE_DIRECTION";
 const SHOW_MOUSE = "SHOW_MOUSE";
 const EAT_MOUSE = "EAT_MOUSE";
 const TOGGLE_CONSOLE = "TOGGLE_CONSOLE";
+const CLOSE_MODAL = "CLOSE_MODAL";
 
 // instructions
 const instructions = {
@@ -173,4 +174,5 @@ export {
   transactionOptions,
   transactionHistory,
   scoreHistory,
+  CLOSE_MODAL,
 };

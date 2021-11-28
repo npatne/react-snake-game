@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import styled from "styled-components";
 import { css, scoreHistory } from "../constants";
 import { Notification } from "./index";
 
 function Account() {
+  const [loadingRedeem, setLoadingRedeem] = useState(false);
+  const [loadingFetch, setLoadingFetch] = useState(false);
   const snakeDetails = [
     { title: "Snake Name", value: "Snake" },
     { title: "Current Score", value: "30" },
@@ -36,28 +38,31 @@ function Account() {
           </div>
           <div className="acc-btn-container">
             <button
-              className={`${true ? "loading-btn" : ""}`}
+              className={`${loadingRedeem ? "loading-btn" : ""}`}
               onClick={() => {
-                console.log(`🎈clicked🎈`);
+                setLoadingRedeem(true);
+                setTimeout(() => {
+                  setLoadingRedeem(false);
+                }, 5000);
               }}
             >
-              {true ? "Loading..." : "Redeem Current Score"}
+              {loadingRedeem ? "Loading..." : "Redeem Current Score"}
             </button>
             <button
-              className={`${false ? "loading-btn" : ""}`}
+              className={`${loadingFetch ? "loading-btn" : ""}`}
               onClick={() => {
-                console.log(`🎈clicked🎈`);
+                setLoadingFetch(true);
+                setTimeout(() => {
+                  setLoadingFetch(false);
+                }, 5000);
               }}
             >
-              {false ? "Loading..." : "Fetch/Update Snake Info"}
+              {loadingFetch ? "Loading..." : "Fetch/Update Snake Info"}
             </button>
           </div>
         </div>
-        {true && (
-          <Notification
-            msg="Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-          natus!"
-          />
+        {(loadingFetch || loadingRedeem) && (
+          <Notification msg="Processing Blockchain Call, please wait." />
         )}
       </header>
       <div className="acc-container">
