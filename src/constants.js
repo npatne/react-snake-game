@@ -11,10 +11,10 @@ const directions = { right: "right", left: "left", down: "down", up: "up" };
 
 // css variables
 const css = {
-  backgroundColor: "#1a535c",
+  backgroundColor: "#031c20",
   primaryColor: "#f7fff7",
   secondaryColor: "#64aaa5",
-  actionColor: "#ff6b6b",
+  actionColor: "#d83b3b",
   accentColor: "#ffe66d",
   borderRadius: "8px",
   boxShadow: "2px 2px 5px -2px rgba(0, 0, 0, 0.5)",

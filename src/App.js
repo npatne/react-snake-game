@@ -1,4 +1,5 @@
 import React from "react";
+import { GiSnakeTotem, GiRat } from "react-icons/gi";
 import { SnakeBoard, SnakeVitals, Console } from "./components/index";
 import { useGameContext } from "./gameContext";
 
@@ -7,7 +8,11 @@ function App() {
   return (
     <main className="section">
       <div className="header">
-        <h1 className="heading">Snake game</h1>
+        <h1 className="heading">
+          <GiSnakeTotem />
+          Snake & Mouse
+          <GiRat className="rat-Icon" />
+        </h1>
       </div>
       <section className="container">
         <SnakeVitals />

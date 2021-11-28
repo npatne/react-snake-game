@@ -33,10 +33,17 @@ function Transactions() {
     <Wrapper>
       <header>
         <h2>
-          Snake Name: <span>Snake</span>
+          <p className="font-size-135">Snake Name: </p> <span>Red Rattler</span>
         </h2>
+
         <h2>
-          Balance: <span>123432</span>
+          <p className="font-size-135">Balance:</p>{" "}
+          <span>
+            <small>
+              <i>ST</i>
+            </small>{" "}
+            1234
+          </span>
         </h2>
 
         {true && (

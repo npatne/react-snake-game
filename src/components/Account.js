@@ -20,11 +20,18 @@ function Account() {
         <div className="acc-info-section">
           <div className="acc-info">
             <h2>
-              Connected Account: <span>XXAASDFFEESsd</span>
+              <p className="font-size-135">Connected Account: </p>{" "}
+              <span>XXAASDFFEESsd</span>
             </h2>
 
             <h2>
-              Balance: <span>123432</span>
+              <p className="font-size-135">Balance:</p>{" "}
+              <span>
+                <small>
+                  <i>ST</i>
+                </small>{" "}
+                1234
+              </span>
             </h2>
           </div>
           <div className="acc-btn-container">

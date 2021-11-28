@@ -1,17 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
 :root {
-  --background-color: #1a535c;
+  --background-color: #031c20;
   --primary-color: #f7fff7;
   --secondary-color: #64aaa5;
-  --action-color: #ff6b6b;
+  --action-color: #d83b3b;
   --accent-color: #ffe66d;
   --border-radius: 8px;
-  --game-board-gradient: linear-gradient(
-    333deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 240, 240, 1) 44%,
-    rgba(220, 249, 255, 1) 100%
-  );
   --box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.5);
+  --heading-font: "Russo One";
+}
+
+.font-size-135 {
+  font-size: 1.35rem !important;
+  display: inline;
 }
 
 * {
@@ -19,7 +21,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -61,10 +62,14 @@ h3 {
 }
 
 .heading {
-  font-size: 2.75rem;
+  font-size: 3.2rem;
   width: max-content;
-  border-bottom: 5px solid var(--accent-color);
-  font-style: oblique;
+  margin: 0.5rem;
+  font-family: var(--heading-font);
+}
+
+.rat-Icon {
+  transform: translateY(10px) scaleX(-1.2) scaleY(1.15);
 }
 
 .container {
@@ -151,12 +156,13 @@ h3 {
   font-weight: 600;
   text-transform: uppercase;
   border: none;
-  opacity: 0.7;
+  opacity: 0.9;
   box-shadow: var(--box-shadow);
 }
 
 .button:hover {
-  opacity: 0.9;
+  opacity: 0.7;
+  transform: translateY(-2px);
   cursor: pointer;
   transition: all ease-in-out 100ms;
 }
@@ -174,13 +180,19 @@ h3 {
   height: 390px;
   margin: auto;
   margin-top: 10px;
-  background: var(--game-board-gradient);
   border-radius: var(--border-radius);
   border: 7px outset var(--action-color);
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 5px;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 9%,
+    rgba(1, 89, 83, 1) 62%,
+    rgba(2, 0, 36, 1) 100%
+  );
 }
 
 .game-arena {
@@ -197,11 +209,11 @@ h3 {
 
 .grid .point {
   position: absolute;
-  background-color: var(--background-color);
-  height: 5px;
-  width: 5px;
+  background-color: var(--primary-color);
+  height: 4px;
+  width: 4px;
   border-radius: 50%;
-  opacity: 0.2;
+  opacity: 0.35;
 }
 
 .mouse {
