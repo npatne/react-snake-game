@@ -162,10 +162,27 @@ const reducer = (state, action) => {
             item.left === state.snake.body[state.snake.body.length - 1].left
         );
 
+        let newScore = state.score;
+        if (state.speed === 1) {
+          newScore = newScore + 1;
+        }
+        if (state.speed === 2) {
+          newScore = newScore + 3;
+        }
+        if (state.speed === 3) {
+          newScore = newScore + 5;
+        }
+        if (state.speed === 4) {
+          newScore = newScore + 7;
+        }
+        if (state.speed === 5) {
+          newScore = newScore + 10;
+        }
+
         return {
           ...state,
           showMouse: false,
-          score: state.score + 1,
+          score: newScore,
           snake: {
             ...state.snake,
             body: [...state.snake.body, state.matrixPos[last_y][last_x]],
