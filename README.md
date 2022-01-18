@@ -9,6 +9,16 @@ Preview the game here:
 
 ##### Technology Used
 
-- Moderate HTML, CSS, JS.
-- React
+- HTML, CSS, JS.
+- React.js
+- Styled Components
 - Github and netlify for deployment.
+
+---
+
+##### How to navigate the Code
+
+- The app was created using create-react-app, hence all the custom code resides in the src folder.
+- All the major imports are done in the in the index.js files in each folder.
+- The file names specifies the component of game that code present in the file corresponds to.
+ 
